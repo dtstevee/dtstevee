@@ -1,4 +1,4 @@
-# Hi, I'm Steve 👋
+# Hi, I'm Steve Wang 👋
 
 I'm a graduate student in Business Analytics with a strong focus on data analytics, machine learning, and end-to-end data projects.  
 I enjoy turning messy data into structured insights and building practical analytics systems.
