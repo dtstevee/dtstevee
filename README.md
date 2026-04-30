@@ -14,7 +14,7 @@ I enjoy working on end-to-end data projects that turn raw data into insights, pr
 - **Data Analysis**: Pandas, NumPy
 - **Machine Learning**: Scikit-learn, Regression, Classification, Feature Engineering
 - **Visualization**: Matplotlib, Seaborn, Streamlit
-- **Quant & Finance**: Portfolio Analysis, Backtesting, Financial Data Analysis
+- **Quant & Finance**: Portfolio Theory & Analysis, Alpha Researching, Backtesting, Financial Time Series Analysis
 - **Tools**: Git, GitHub, Jupyter Notebook, VS Code
 
 ## Featured Projects
