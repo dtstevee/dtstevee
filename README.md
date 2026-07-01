@@ -10,7 +10,7 @@ My work sits at the intersection of **financial data engineering, machine learni
 
 - **Quantitative equity research**: cross-sectional factors, factor timing, backtesting, and portfolio allocation
 - **Risk-aware portfolio construction**: mean-variance optimization, Black-Litterman-style views, covariance estimation, and transaction-cost-aware evaluation
-- **Data engineering for research workflows**: WRDS/CRSP/Compustat ingestion, DuckDB storage, reproducible panel construction, and modular pipeline design
+- **Data engineering for research workflows**: WRDS/CRSP/Compustat ingestion, reproducible panel construction, and modular pipeline design
 - **Applied machine learning**: predictive modeling, feature engineering, model diagnostics, and out-of-sample validation
 
 ---
@@ -19,49 +19,33 @@ My work sits at the intersection of **financial data engineering, machine learni
 
 ### Cross-Sectional Multi-Factor Equity Strategy *(Private Research Repo)*
 
-A modular quantitative equity research pipeline for transforming raw market and accounting data into factor returns, ML-based views, and portfolio allocation inputs.
+A modular quantitative equity research project that connects financial data engineering, factor research, machine learning signals, Bayesian portfolio views, and strategy backtesting.
 
 **Research framing:**
 
-> How can noisy ML-based factor timing signals be converted into uncertainty-aware portfolio views and used inside a Bayesian allocation framework?
+> How can noisy factor timing signals be transformed into uncertainty-aware portfolio allocation decisions?
 
-**Current pipeline:**
+**High-level workflow:**
 
 ```text
-WRDS / CRSP / Compustat / FF data
+Financial data ingestion
         ↓
-cleaned stock-month and stock-day panels
+Stock and factor panel construction
         ↓
-characteristic construction and factor sleeves
+Factor signal modeling and timing views
         ↓
-integrated long factor panel with realized, rolling, holding, and target features
+Risk and uncertainty estimation
         ↓
-ML / z-score factor timing signals
-        ↓
-Black-Litterman-style P, Q, Ω view-system prototypes
-        ↓
-structured covariance, posterior expected returns, and allocation research
-        ↓
-strategy backtesting and diagnostics
+Portfolio allocation and backtesting
 ```
 
-**Implemented / in progress:**
+**What the project emphasizes:**
 
-- WRDS raw data download and local storage workflow
-- CRSP/Compustat cleaning, CCM merge, and characteristic-panel construction
-- 2x3 factor holding and factor return construction
-- Enriched stock-level holding panel with weights, weight changes, bid-ask spread, and transaction-cost fields
-- Integrated long factor panel with realized returns, holding features, rolling features, and ML targets
-- Daily CRSP/FF5 preparation, daily characteristic construction, and month-end signal snapshots with explicit `SIGNAL_MONTH` / `TARGET_MONTH` timing
-- Long-only mean-variance strategy baseline across long-short factor sleeves
-- Black-Litterman-style view construction prototypes: View Matrix `P`, View Vector `Q`, residual-based View Uncertainty `Ω`, structured covariance, implied prior returns, and posterior expected-return handoff
-
-**Current priorities:**
-
-- Validate timing, delisting returns, and transaction-cost edge cases
-- Strengthen portfolio construction beyond historical-mean max Sharpe
-- Tune covariance and view-uncertainty assumptions
-- Expand factor coverage before relying on category-relative factor views
+- Building reliable research data infrastructure from WRDS, CRSP, Compustat, and Fama-French data
+- Constructing cross-sectional equity characteristics and factor return panels
+- Translating ML-based factor signals into structured portfolio views
+- Exploring Black-Litterman-style expected-return construction and uncertainty calibration
+- Evaluating allocation strategies with backtesting, transaction-cost awareness, and risk diagnostics
 
 **Tech stack:** Python, Pandas, NumPy, Scikit-learn, SciPy, DuckDB, WRDS, CRSP, Compustat, Fama-French data, Jupyter, Git
 
